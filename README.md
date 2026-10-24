@@ -20,14 +20,14 @@ macOS 向け 作業用メモリ付きタイマー
 
 ## Releases
 
-`v` で始まるタグを push すると、GitHub Actions が macOS 向けの未署名アプリをビルドし、zip ファイルを GitHub Release に添付します。
+`v` で始まるタグを push すると、GitHub Actions が macOS 向けのアプリをビルドし、Apple Developer 証明書を使わない ad-hoc 署名を付けて、zip ファイルを GitHub Release に添付します。
 
 ```sh
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-コード署名は行っていないため、初回起動時は macOS のセキュリティ警告が表示される場合があります。
+Developer ID 署名と notarization は行っていないため、初回起動時は macOS のセキュリティ警告が表示される場合があります。その場合は、アプリを右クリックして「開く」を選択してください。
 
 ## Inspired by
 

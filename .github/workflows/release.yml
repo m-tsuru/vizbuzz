@@ -19,7 +19,7 @@ jobs:
       - name: Check Xcode version
         run: xcodebuild -version
 
-      - name: Build unsigned app
+      - name: Build app
         run: |
           version="${GITHUB_REF_NAME#v}"
           xcodebuild \
@@ -32,6 +32,14 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             build
+
+      - name: Ad-hoc sign app
+        run: |
+          app_path="$RUNNER_TEMP/DerivedData/Build/Products/Release/VizBuzz.app"
+
+          test -d "$app_path"
+          codesign --force --deep --sign - "$app_path"
+          codesign --verify --deep --strict --verbose=2 "$app_path"
 
       - name: Package app
         id: package
