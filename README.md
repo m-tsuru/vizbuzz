@@ -3,7 +3,7 @@
     <h1>VizBuzz</h1>
 </div>
 
-macOS 向け 作業用メモリ付きタイマー
+macOS 向け 作業用目盛り付きタイマー
 
 ## ScreenShot
 
