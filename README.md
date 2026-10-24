@@ -18,6 +18,17 @@ macOS 向け 作業用メモリ付きタイマー
 - 常に最前面に表示することができる
 - ログイン時に自動起動することができる
 
+## Releases
+
+`v` で始まるタグを push すると、GitHub Actions が macOS 向けの未署名アプリをビルドし、zip ファイルを GitHub Release に添付します。
+
+```sh
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+コード署名は行っていないため、初回起動時は macOS のセキュリティ警告が表示される場合があります。
+
 ## Inspired by
 
 - 「[VISUAL BAR TIMER（ビジュアルバータイマー）](https://www.kingjim.co.jp/sp/visual-bar-timer/vbt20/)」（キングジム）

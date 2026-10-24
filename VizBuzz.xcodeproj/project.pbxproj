@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9ED56A2A308D2FE500E03727 /* Exceptions for "MyApp" folder in "MyApp" target */ = {
+		9ED56A2A308D2FE500E03727 /* Exceptions for "VizBuzz" folder in "MyApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,12 +21,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		000000000000000000000010 /* MyApp */ = {
+		000000000000000000000010 /* VizBuzz */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9ED56A2A308D2FE500E03727 /* Exceptions for "MyApp" folder in "MyApp" target */,
+				9ED56A2A308D2FE500E03727 /* Exceptions for "VizBuzz" folder in "MyApp" target */,
 			);
-			path = MyApp;
+			path = VizBuzz;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -273,7 +273,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyApp/Info.plist;
+				INFOPLIST_FILE = VizBuzz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VizBuzz;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -318,7 +318,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				EXCLUDED_SOURCE_FILE_NAMES = Info.plist;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyApp/Info.plist;
+				INFOPLIST_FILE = VizBuzz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VizBuzz;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

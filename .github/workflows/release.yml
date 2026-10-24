@@ -1,0 +1,50 @@
+name: Build and release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-14
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build unsigned app
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          xcodebuild \
+            -project VizBuzz.xcodeproj \
+            -scheme MyApp \
+            -configuration Release \
+            -sdk macosx \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            MARKETING_VERSION="$version" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            build
+
+      - name: Package app
+        id: package
+        run: |
+          app_path="$RUNNER_TEMP/DerivedData/Build/Products/Release/VizBuzz.app"
+          archive_path="$RUNNER_TEMP/VizBuzz-${GITHUB_REF_NAME}.zip"
+
+          test -d "$app_path"
+          ditto -c -k --sequesterRsrc --keepParent "$app_path" "$archive_path"
+          echo "archive_path=$archive_path" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "${{ steps.package.outputs.archive_path }}" \
+            --title "VizBuzz $GITHUB_REF_NAME" \
+            --generate-notes
